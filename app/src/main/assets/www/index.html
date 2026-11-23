@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#090d20"><meta name="description" content="RUMI — przyjazna korepetytorka angielskiego 3D dla dzieci.">
+  <link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="styles.css">
+  <meta name="application-name" content="RUMI 30.0"><title>RUMI 30.0 — English Star Academy</title>
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js"}}</script>
+</head>
+<body>
+<div class="app-shell">
+  <header class="topbar"><a class="brand" href="#"><span class="brand-mark">✦</span><span>RUMI<small>ENGLISH STAR ACADEMY</small></span></a><div class="top-actions"><span class="streak" id="streak">⭐ 0</span><button class="icon-btn" id="parentOpen" aria-label="Panel rodzica">⚙</button></div></header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy"><span class="eyebrow">YOUR K-POP ENGLISH ADVENTURE</span><h1>Hej, supergwiazdo!<br><em>Gotowa na angielski?</em></h1><p>Razem zamienimy naukę w przygodę. Małe kroki, wielkie sceniczne sukcesy!</p><button class="primary" id="startMission">Zaczynamy! <span>→</span></button></div>
+      <div class="avatar-wrap"><div class="avatar-glow"></div><canvas id="rumiCanvas" aria-label="Trójwymiarowa animowana postać Rumi"></canvas><div class="speech" id="avatarSpeech">Hi! I'm Rumi! 💜</div><div class="avatar-label"><span class="live-dot"></span> RUMI 30.0 · READY TO LEARN</div></div>
+    </section>
+    <section class="stats-grid"><div class="stat"><span>⭐</span><strong id="totalStars">0</strong><small>gwiazdek</small></div><div class="stat"><span>🎤</span><strong id="doneCount">0/8</strong><small>ukończonych misji</small></div><div class="stat"><span>⏱️</span><strong>10–15</strong><small>minut dziennie</small></div></section>
+    <section class="section-head"><div><span class="eyebrow">CHOOSE YOUR QUEST</span><h2>Misje Rumi</h2></div><span class="level-pill">20 QUESTS · STARTER TO A1</span></section>
+    <section class="mission-grid" id="missionGrid"></section>
+    <section class="practice-card review-card"><div class="practice-icon">🧠</div><div class="practice-text"><span class="eyebrow">SMART MEMORY · DAILY QUEST</span><h2>Trening pamięci</h2><p id="reviewSummary">Rumi dobiera słówka do powtórki w idealnym momencie.</p></div><button class="secondary" id="startReview">Powtarzaj <span>→</span></button></section>
+    <section class="practice-card"><div class="practice-icon">🎧</div><div class="practice-text"><span class="eyebrow">SPEAKING STAGE</span><h2>Porozmawiaj z Rumi</h2><p>Ćwicz krótkie zdania. Rumi mówi po angielsku i pomaga po polsku.</p></div><button class="secondary" id="openChat">Rozmawiaj <span>→</span></button></section>
+    <section class="section-head"><div><span class="eyebrow">YOUR STAR JOURNEY</span><h2>Moje postępy</h2></div></section>
+    <section class="progress-card"><div class="progress-top"><span>Twoja droga do gwiazd</span><strong id="progressLabel">0%</strong></div><div class="progress-track"><div id="progressBar"></div></div><div class="week" id="weekGrid"></div></section>
+  </main><footer>Stworzone z 💜 dla małych odkrywczyń · RUMI 30.0</footer>
+</div>
+<dialog id="lessonDialog" class="modal"><div class="modal-head"><div><span class="eyebrow" id="lessonTag">MISSION</span><h2 id="lessonTitle">Let's learn!</h2></div><button class="icon-btn close" data-close="lessonDialog">✕</button></div><div id="lessonBody"></div></dialog>
+<dialog id="chatDialog" class="modal chat-modal"><div class="modal-head"><div><span class="eyebrow">SPEAKING BUDDY</span><h2>Chat with Rumi 💜</h2></div><button class="icon-btn close" data-close="chatDialog">✕</button></div><div class="chat-hint">Hi, superstar! Powiedz coś po angielsku. Rumi pomoże Ci bez stresu.</div><div id="chatLog" class="chat-log" aria-live="polite"><div class="bubble rumi">Hello, superstar! What's your name? 🌟</div></div><div class="chat-controls"><button class="mic-btn" id="micBtn" title="Mów">🎙️</button><input id="chatInput" placeholder="Type or say something..." autocomplete="off"><button class="send-btn" id="sendChat">➤</button></div><div class="chat-foot" id="voiceStatus">Mikrofon może wymagać zgody rodzica i obsługi usług mowy w Androidzie.</div></dialog>
+<dialog id="parentDialog" class="modal parent-modal"><div class="modal-head"><div><span class="eyebrow">GROWN-UPS ONLY</span><h2>Panel rodzica</h2></div><button class="icon-btn close" data-close="parentDialog">✕</button></div><div id="parentContent"><p>Wpisz PIN rodzica, aby zobaczyć ustawienia.</p><div class="pin-row"><input id="pinInput" type="password" inputmode="numeric" maxlength="8" placeholder="PIN"><button class="primary" id="pinSubmit">Otwórz</button></div><small class="muted">Domyślny PIN: 1234. Zmień go po pierwszym uruchomieniu.</small></div></dialog>
+<script src="app.js"></script><script src="rumi20.js"></script><script src="rumi21.js"></script><script src="rumi30.js"></script><script type="module" src="avatar3d.js"></script>
+</body></html>
